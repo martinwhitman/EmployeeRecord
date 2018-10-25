@@ -49,20 +49,20 @@ $(document).ready(function() {
 			var errorYears=$("#years error");
 			
 			var valid=elementName.hasClass("valid");
-			if (!valid){errorName.removeClass("error").addClass("error_show"); error_free=false;}
-			else{errorName.removeClass("error_show").addClass("error");}
+			if (!valid){errorName.removeClass("error").addClass("error_show"); $(".error1").show(); error_free=false;}
+			else{$(".error1").hide();}
 			
 			valid=elementAge.hasClass("valid");
-			if (!valid){errorAge.removeClass("error").addClass("error_show"); error_free=false;}
-			else{errorAge.removeClass("error_show").addClass("error");}
+			if (!valid){errorAge.removeClass("error").addClass("error_show"); $(".error2").show(); error_free=false;}
+			else{$(".error2").hide();}
 			
 			valid=elementBeneficiary.hasClass("valid");
-			if (!valid){errorBeneficiary.removeClass("error").addClass("error_show"); error_free=false;}
-			else{errorBeneficiary.removeClass("error_show").addClass("error");}
+			if (!valid){errorBeneficiary.removeClass("error").addClass("error_show"); $(".error4").show(); error_free=false;}
+			else{$(".error4").hide();}
 			
 			valid=elementYears.hasClass("valid");
-			if (!valid){errorYears.removeClass("error").addClass("error_show"); error_free=false;}
-			else{errorYears.removeClass("error_show").addClass("error");}
+			if (!valid){errorYears.removeClass("error").addClass("error_show"); $(".error3").show(); error_free=false;}
+			else{$(".error3").hide();}
 		
 		if (!error_free){
 			event.preventDefault(); 
@@ -90,12 +90,30 @@ $(document).ready(function() {
     display: inline-block;
     font-size: 16px;
 }
-span.error{
+span.error1{
+	color: red;
 	display: none;
 	margin-left: 10px;
 	
 }		
-
+span.error2{
+	color: red;
+	display: none;
+	margin-left: 10px;
+	
+}	
+span.error3{
+	color: red;
+	display: none;
+	margin-left: 10px;
+	
+}	
+span.error4{
+	color: red;
+	display: none;
+	margin-left: 10px;
+	
+}	
 span.error_show{
 	color: red;
 	margin-left: 10px;
@@ -119,22 +137,22 @@ input.valid{
 	    <tr>
 	        <td><mvc:label path="name">Name</mvc:label></td>
 	        <td><mvc:input path="name" id="name"/></td>
-	        <td><span  class="error"id="name error">MUST ENTER A NAME</span></td>
+	        <td><span  class="error1"id="name error">MUST ENTER A NAME</span></td>
 	    </tr>
 	    <tr>
 	        <td><mvc:label path="age">Age</mvc:label></td>
 	        <td><mvc:input path="age" id="age" /></td>
-	        <td><span class="error"id="age error" >MUST ENTER AN AGE OVER 18</span></td>
+	        <td><span class="error2"id="age error" >MUST ENTER AN AGE OVER 18</span></td>
 	    </tr>
 	    <tr>
 	        <td><mvc:label path="yearsEmployed">Years Employed</mvc:label></td>
 	        <td><mvc:input path="yearsEmployed" id="years"/></td>
-	        <td><span class="error"id="years error" >MUST ENTER A NON-NEGATIVE NUMBER</span></td>
+	        <td><span class="error3"id="years error" >MUST ENTER A NON-NEGATIVE NUMBER</span></td>
 	    </tr>
    	    <tr>
 	        <td><mvc:label path="insuranceBeneficiary">Insurance Beneficiary</mvc:label></td>
 	        <td><mvc:input path="insuranceBeneficiary" id="beneficiary" /></td>
-	        <td><span class="error" id="beneficiary error" >MUST NAME A BENEFICIARY</span></td>
+	        <td><span class="error4" id="beneficiary error" >MUST NAME A BENEFICIARY</span></td>
 	    </tr>
 		
 	    <tr>
